@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Formulario PW</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/all.min.css'>
+</head>
+
+<body>
+    <h1 class="titulo-form">Formulário</h1>
+    <form action="dados.html" method="get" class="formulario row g-3" onsubmit="LiberaEnter(event)">
+        <div class="col-md-8">
+            <label for="inputName" class="form-label">Nome</label>
+            <div class="container-input">
+                <input type="name" class="form-control" id="inputName" name="inputName" placeholder="Digite seu nome:"
+                    onchange="VerificaInputs('inputName', 0)">
+                <span>*</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="inputCPF" class="form-label">CPF</label>
+            <div class="container-input">
+                <input type="text" class="form-control" id="inputCPF" name="inputCPF"placeholder="Apenas numeros"
+                    onchange="VerificaInputs('inputCPF', 1)">
+                <span>*</span>
+
+            </div>
+        </div>
+        <div class="col-5">
+            <label for="inputAddress" class="form-label">Endereço</label>
+            <div class="container-input">
+                <input type="text" class="form-control" id="inputAddress" name="inputAddress" onchange="VerificaInputs('inputAddress', 2)">
+                <span>*</span>
+            </div>
+        </div>
+        <div class="col-5">
+            <label for="inputComp" class="form-label">Complemento <p class="opc">opcional</p></label>
+            <input type="text" class="form-control" id="inputComp" name="inputComp" placeholder="Apartamento, estudio, ou bloco">
+        </div>
+        <div class="col-md-3">
+            <label for="inputCod" class="form-label">Codigo de Area</label>
+            <div class="container-input">
+                <input type="text" class="form-control" id="inputCod" name="inputCod" onchange="VerificaInputs('inputCod', 3)">
+                <span>*</span>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label for="inputTel" class="form-label">Numero de Telefone</label>
+            <div class="container-input">
+                <input type="tel" class="form-control" id="inputTel" name="inputTel" placeholder="Apenas numeros"
+                    onchange="VerificaInputs('inputTel', 4)">
+                <span>*</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="inputGen" class="form-label">Genero</label>
+            <select id="inputGen" name="inputGen" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="inputBirth" class="form-label">Data de Nascimento</label>
+            <div class="container-input">
+                <input type="text" class="form-control" id="inputBirth" name="inputBirth"
+                placeholder="dia-mes-ano" onchange="VerificaInputs('inputBirth', 5); VerificaData()" >
+                    <span>*</span>
+            </div>
+        </div>
+        
+        <div id="avisoForm">PREENCHA O FORMULARIO POR COMPLETO</div>
+        <div id="avisoData">COLOQUE A DATA CORRETA</div>
+        
+        <div class="col-md-2">
+            <label for="outputIdade" class="form-label">Idade: </label>
+            <output id="outputIdade" name="outputIdade"></output>
+        </div>
+        <div class="col-md-5">
+            <label for="inputSchool" class="form-label">Escolaridade</label>
+            <select id="inputSchool" name="inputSchool" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="Fundamental">Fundamental</option>
+                <option value="Medio">Ensino médio</option>
+                <option value="Superior">Superior</option>
+                <option value="Pos">Pós-graduação</option>
+                <option value="Mestrado">Mestrado</option>
+            </select>
+        </div>
+        <div class="col-md-5">
+            <label for="inputState" class="form-label">Estado</label>
+            <select id="inputState" name="inputState" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espirito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="inputCEP" class="form-label">CEP</label>
+            <div class="container-input">
+                <input type="text" class="form-control" id="inputCEP" name="inputCEP" placeholder="Apenas numeros"
+                    onchange="VerificaInputs('inputCEP', 6)">
+                <span>*</span>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label for="inputStatus" class="form-label">Estado Civil</label>
+            <select id="inputStatus" name="inputStatus" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="solteiro">Solteiro(a)</option>
+                <option value="casado">Casado(a)</option>
+                <option value="viuvo">Viuvo(a)</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="inputChild" class="form-label">Tem filhos?</label>
+            <select id="inputChild" name="inputChild" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Nao</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="inputWork" class="form-label">Situação de Trabalho</label>
+            <select id="inputWork" name="inputWork" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="desempregado">Desempregado</option>
+                <option value="clt">CLT</option>
+                <option value="mei">MEI</option>
+            </select>
+        </div>
+        <div class="form-banco">
+            <h6>Cobrar atraves de um banco? </h6>
+            <div class="form-resposta-banco">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sim
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Não
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <label for="inputGains" class="form-label">Renda Mensal</label>
+            <select id="inputGains" name="inputGains" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="1 salario min">1 Salário Mínimo</option>
+                <option value="2 salario min">2 Salários Mínimos</option>
+                <option value="3 salario min">3 Salários Mínimos</option>
+                <option value="3+ salario min">Mais de 3 Salários Mínimos</option>
+            </select>
+        </div>
+        <div class="col-md-5">
+            <label for="inputMoney" class="form-label">Quanto de dinheiro precisa?</label>
+            <select id="inputMoney" name="inputMoney" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="1 salario min">1 Salário Mínimo</option>
+                <option value="2 salario min">2 Salários Mínimos</option>
+                <option value="3 salario min">3 Salários Mínimos</option>
+                <option value="3+ salario min">Mais de 3 Salários Mínimos</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="inputDestiny" class="form-label">Qual o destino do emprestimo</label>
+            <select id="inputDestiny" name="inputDestiny" class="form-select">
+                <option value="---" selected>---</option>
+                <option value="empresa">Para o meu negocio</option>
+                <option value="viajar">Viajar</option>
+            </select>
+        </div>
+        <div class="col-12 footer">
+            <button type="submit" class="btn btn-primary" id="buttonEnviar">Enviar</button>
+        </div>
+
+    </form>
+
+    <script src="./js/cleave.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/transfereDados.js"></script>
+    <script src="./js/mascaraInputs.js"></script>
+
+</body>
+
+</html>
