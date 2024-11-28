@@ -74,16 +74,17 @@ function VerificaInputs(inputID, spanNum) {
 
 // Confere a data digitada pelo usuario para returna a sua idade
 function VerificaData() {
+
     const inputBirth = document.getElementById('inputBirth')
     const outputIdade = document.getElementById('outputIdade')
     let datasUsuario = inputBirth.value.split('-')
 
-    datasUsuario[0]
-    datasUsuario[1]
-    datasUsuario[2]
+    datasUsuario[0] // dia
+    datasUsuario[1] // mes
+    datasUsuario[2] // ano
 
     const date = new Date();
-    let mesAtual = date.getMonth();
+    let mesAtual = date.getMonth(); // returna o mes atual de acordo com a data local
 
     // verifica se o mes de aniversario ja ocorreu
     if (datasUsuario[1] > mesAtual + 1) {
@@ -93,21 +94,23 @@ function VerificaData() {
     else {
         outputIdade.value = 2024 - datasUsuario[2]
     }
-
+    
     // Verifica o ano digitado pelo usuario
     if (datasUsuario[2] > 2024) {
-
+        
         const avisoData = document.getElementById('avisoData')
-
+        
         const interval = setInterval(() => {
             avisoData.style.display = "flex"
         },100)
-
+        
         setTimeout(()=>{
             clearInterval(interval)
             avisoData.style.display = "none"
         },2000)
     }
+    
+    document.getElementById('hiddenIdade').value = outputIdade.value;
 }
 
 

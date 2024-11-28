@@ -16,7 +16,11 @@ body {
 }
 
 .titulo-form {
-    color: #3652b5;
+    
+    font-size: 50px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 label {
@@ -118,7 +122,7 @@ span{
     position: absolute;
     top: 16.5%;
     left: 60%;
-    color: #3652b5;
+    color: #000000;
     font-size: 0.7rem;
 }
 
@@ -140,8 +144,20 @@ span{
 
 /* Estilizando o contêiner da resposta */
 .resp-form {
-    width: 600px;  /* Largura do contêiner */
-    margin-top: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    max-width: 600px;
+    line-height: 1.6;
+    border-left: 4px solid #000000;
+    padding-left: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.resp-form:hover{
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilizando o título (h4) e a resposta (p) para ficarem na mesma linha */
@@ -150,13 +166,15 @@ span{
     
     margin: 0;  /* Remove a margem */
     font-weight: bold;  /* Deixa o texto mais forte */
-    color: #333;  /* Cor do texto */
+    color: #5e5d5d;  /* Cor do texto */
 }
 
 .resp-form p {
     display: inline-block;  /* Faz com que o p fique na mesma linha */
     margin: 0;  /* Remove a margem */
     font-size: 20px;  /* Tamanho da fonte */
+    color:#333
     
 
 }
+
